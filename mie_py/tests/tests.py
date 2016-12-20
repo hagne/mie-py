@@ -4,7 +4,7 @@ import numpy as np
 from scipy import integrate
 
 class TestBohrenHuffman(TestCase):
-    def test_compare2online_calculator(self, verbose=False, raiseError=True):
+    def test_compare2online_calculator(self, test_threshold = 1e-4, verbose=False, raiseError=True):
         """Test against the calculations from here: http://omlc.org/cgi-bin/mie_angles.cgi?diameter=1.0&lambda_vac=0.6328&n_medium=1.0&nr_sphere=1.5&ni_sphere=0&n_angles=100&density=0.1"""
         mc = mie_py.Bohren_Huffman()
         mc.parameters.diameter = 1
@@ -47,8 +47,8 @@ class TestBohrenHuffman(TestCase):
             if verbose:
                 print(i)
             if raiseError:
-                self.assertTrue (abs(i - 1) < 1e-4)
-            if abs(i - 1) > 1e-4:
+                self.assertTrue (abs(i - 1) < test_threshold)
+            if abs(i - 1) > test_threshold:
                 test_passed = False
 
         if verbose:
@@ -62,7 +62,7 @@ class TestBohrenHuffman(TestCase):
 
         return test_passed
 
-    def test_angular_scattering_func_integral(verbose=False, raiseError=True):
+    def test_angular_scattering_func_integral(self, test_threshold = 1e-4, verbose=False, raiseError=True):
         """This test makes sure the integral over the the entire angular scattering function is equal (deviates less
          than 1e-4) to the overall scattering crossection"""
 
@@ -85,7 +85,6 @@ class TestBohrenHuffman(TestCase):
             print(mc.scattering_crosssection / isf)
         passed = False
 
-        test_threshold = 1e-4
         if raiseError:
             assert (((mc.scattering_crosssection / isf) - 1) < test_threshold)
         if abs((mc.scattering_crosssection / isf) - 1) > test_threshold:

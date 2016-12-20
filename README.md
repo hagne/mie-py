@@ -1,5 +1,6 @@
-# mie-py
 [![Build Status](https://travis-ci.org/hagne/mie-py.svg?branch=master)](https://travis-ci.org/hagne/mie-py)
+
+# mie-py
 
 Mie scattering calculations as described in Bohren and Huffman (1). 
 Python code is based on a fortran to python translation conduced by Herbert Kaiser. Last time I checked the link to 
@@ -14,7 +15,9 @@ New York. doi:10.1002/9783527618156*
 
 ### Optioinal
 
-- matplotlib (allows plotting)
+- matplotlib -> adds plotting capabilities
+- scipy -> needed for testing
+
 
 ## Installation
 Execute the following line in the terminal from within the folder containing the program.
@@ -22,3 +25,7 @@ Execute the following line in the terminal from within the folder containing the
 ``
 python setup.py install
 ``
+
+## Examples
+
+- [example gist](https://gist.github.com/6762781b4f744baeeefeea4773bcb874)

@@ -106,7 +106,7 @@ class Parameters(object):
     def wavelength(self, value):
         self._something_changed = True
         self._wavelength = value
-        self._size_parameter = np.pi * self.diameter / self._wavelength
+        # self._size_parameter = np.pi * self.diameter / self._wavelength
         try:
             self._size_parameter = np.pi * self.diameter / self._wavelength
         except:
