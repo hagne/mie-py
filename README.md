@@ -1,4 +1,6 @@
 # mie-py
+[![Build Status](https://travis-ci.org/hagne/mie-py.svg?branch=master)](https://travis-ci.org/hagne/mie-py)
+
 Mie scattering calculations as described in Bohren and Huffman (1). 
 Python code is based on a fortran to python translation conduced by Herbert Kaiser. Last time I checked the link to 
 [the original code](http://scatterlib.googlecode.com/files/bhmie_herbert_kaiser_july2012.py) was broken.
