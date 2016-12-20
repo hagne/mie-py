@@ -19,5 +19,8 @@ setup(
     keywords="mie scattering calculations",
     url="http://github.com/hagne/mie-py",
     install_requires=['numpy','pandas'],
-    extras_require={'plotting': ['matplotlib']},
+    extras_require={'plotting': ['matplotlib'],
+                    'testing': ['scipy']},
+    test_suite='nose.collector',
+    tests_require=['nose'],
 )
