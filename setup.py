@@ -4,8 +4,8 @@ required_verion = (3,)
 if sys.version_info < required_verion:
     raise ValueError('mie-py needs at least python {}! You are trying to install it under python {}'.format('.'.join(str(i) for i in required_verion), sys.version))
 
-import ez_setup
-ez_setup.use_setuptools()
+# import ez_setup
+# ez_setup.use_setuptools()
 
 from setuptools import setup, find_packages
 setup(
